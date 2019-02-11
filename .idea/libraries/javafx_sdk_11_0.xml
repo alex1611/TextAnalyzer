@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="javafx-sdk-11.0">
+    <ANNOTATIONS>
+      <root url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/legal" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/legal" />
+      <root url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/lib" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/legal" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/legal" />
+      <root url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/lib" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/legal" />
+      <root url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/lib" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/legal" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/lib" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/legal" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>
