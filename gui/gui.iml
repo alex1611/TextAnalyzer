@@ -50,5 +50,7 @@
         <jarDirectory url="file://$USER_HOME$/JDK/jdk-11.0.1/lib/javafx-sdk-11.0.2/lib" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="api" />
+    <orderEntry type="module" module-name="factory" />
   </component>
 </module>
