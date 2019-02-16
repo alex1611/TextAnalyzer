@@ -1,7 +1,8 @@
 package easytext.algorithms;
 
 public enum Algorithm {
-    FleschKincaid("Flesch-Kincaid");
+    FleschKincaid("Flesch-Kincaid"),
+    Coleman("Coleman-Liau");
     private String value;
 
     Algorithm(String value) {
