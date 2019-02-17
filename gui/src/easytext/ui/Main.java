@@ -3,6 +3,7 @@ package easytext.ui;
 import easytext.algorithms.Algorithm;
 import easytext.api.Analyzer;
 import easytext.factory.AnalyzerFactory;
+import easytext.tools.RightAnalyzer;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
@@ -20,14 +21,16 @@ import java.util.List;
 import java.util.ServiceLoader;
 
 public class Main extends Application {
-    private static ComboBox<Algorithm> algorithm;
+    private static ComboBox<Algorithm> algorithms;
     private static TextArea input;
     private static Text output;
     public static void main(String[] args) {
         Iterable<Analyzer> analyzers = ServiceLoader.load(Analyzer.class);
-        for (Analyzer analyzer: analyzers) {
-            System.out.println(analyzer.getName());
-        }
+        ((ServiceLoader<Analyzer>) analyzers)
+                .stream()
+                .filter(provider -> isRightAnalyzer(provider.type()))
+                .map(ServiceLoader.Provider::get)
+                .forEach(analyzer -> System.out.println(analyzer.getName()));
         Application.launch(args);
     }
     @Override
@@ -36,16 +39,16 @@ public class Main extends Application {
         Button btn = new Button();
         btn.setText("Calculate");
         btn.setOnAction(event ->
-                output.setText(analyze(input.getText(), algorithm.getValue()))
+                output.setText(analyze(input.getText(), algorithms.getValue()))
         );
         VBox vbox = new VBox();
         vbox.setPadding(new Insets(3));
         vbox.setSpacing(3);
         Text title = new Text("Choose an algorithm:");
-        algorithm = new ComboBox<>();
-        algorithm.setItems(FXCollections.observableArrayList(Algorithm.values()));
+        algorithms = new ComboBox<>();
+        algorithms.setItems(FXCollections.observableArrayList(Algorithm.values()));
         vbox.getChildren().add(title);
-        vbox.getChildren().add(algorithm);
+        vbox.getChildren().add(algorithms);
         vbox.getChildren().add(btn);
         input = new TextArea();
         output = new Text();
@@ -85,5 +88,12 @@ public class Main extends Application {
             }
         }
         return words;
+    }
+    ////////////////////
+    ////////////////////
+    ///////SL///////////
+    private static boolean isRightAnalyzer(Class<?> clazz){
+        return clazz.isAnnotationPresent(RightAnalyzer.class)
+                && clazz.getAnnotation(RightAnalyzer.class).value();
     }
 }

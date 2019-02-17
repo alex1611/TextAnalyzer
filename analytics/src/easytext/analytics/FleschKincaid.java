@@ -2,9 +2,11 @@ package easytext.analytics;
 
 import easytext.algorithms.Algorithm;
 import easytext.api.Analyzer;
+import easytext.tools.RightAnalyzer;
 
 import java.util.List;
 
+@RightAnalyzer(value = true)
 public class FleschKincaid implements Analyzer {
     @Override
     public String getName() {
